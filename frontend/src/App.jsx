@@ -107,11 +107,13 @@ function App() {
 
   return (
     <div className={`app-container ${isDarkMode ? "theme-dark" : ""} ${isSidebarCollapsed ? "sidebar-collapsed" : ""}`}>
-      <BarraLateral 
-        activeTab={activeTab} 
-        setActiveTab={setActiveTab} 
-        isCollapsed={isSidebarCollapsed} 
-        setIsCollapsed={setIsSidebarCollapsed} 
+      <BarraLateral
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        isCollapsed={isSidebarCollapsed}
+        setIsCollapsed={setIsSidebarCollapsed}
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
       />
 
       <main className="main-content">

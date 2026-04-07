@@ -70,10 +70,10 @@ export const VisaoAgendamentos = ({ filteredAppointments, filters, setFilters, f
             <tbody>
               {filteredAppointments.map((app) => (
                 <tr key={app.id}>
-                  <td style={{ fontWeight: '500' }}>{app.patientName}</td>
-                  <td>{formatDate(app.appointmentDate)}</td>
-                  <td>{app.type}</td>
-                  <td>
+                  <td data-label="Paciente" style={{ fontWeight: '500' }}>{app.patientName}</td>
+                  <td data-label="Data e Hora">{formatDate(app.appointmentDate)}</td>
+                  <td data-label="Tipo">{app.type}</td>
+                  <td data-label="Status">
                     <span className={`badge ${app.status}`}>
                       {app.status}
                     </span>

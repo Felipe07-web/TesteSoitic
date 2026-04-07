@@ -1,7 +1,7 @@
 import React from "react";
-import { IconCalendar, IconHome, IconUsers, IconMenu } from "./Icones";
+import { IconCalendar, IconHome, IconUsers, IconMenu, IconSun, IconMoon } from "./Icones";
 
-export const BarraLateral = ({ activeTab, setActiveTab, isCollapsed, setIsCollapsed }) => {
+export const BarraLateral = ({ activeTab, setActiveTab, isCollapsed, setIsCollapsed, isDarkMode, setIsDarkMode }) => {
   return (
     <aside className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
       <div className="sidebar-header">
@@ -12,8 +12,8 @@ export const BarraLateral = ({ activeTab, setActiveTab, isCollapsed, setIsCollap
           <span className="logo-text">SOITIC Health</span>
         </div>
 
-        <button 
-          className="sidebar-toggle-btn" 
+        <button
+          className="sidebar-toggle-btn"
           onClick={() => setIsCollapsed(!isCollapsed)}
           aria-label={isCollapsed ? "Expandir menu" : "Recolher menu"}
         >
@@ -44,6 +44,16 @@ export const BarraLateral = ({ activeTab, setActiveTab, isCollapsed, setIsCollap
           <IconCalendar /> <span className="nav-label">Agendamentos</span>
         </button>
       </nav>
+
+      <div className="sidebar-footer">
+        <button
+          className="theme-toggle"
+          onClick={() => setIsDarkMode((prev) => !prev)}
+          title="Trocar Tema"
+        >
+          {isDarkMode ? <IconSun /> : <IconMoon />}
+        </button>
+      </div>
     </aside>
   );
 };

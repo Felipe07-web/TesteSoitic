@@ -16,9 +16,9 @@ export const VisaoPacientes = ({ patients, formatDate }) => {
             <tbody>
               {patients.map((patient, i) => (
                 <tr key={i}>
-                  <td style={{ fontWeight: '600' }}>{patient.name}</td>
-                  <td>{formatDate(patient.lastAppointment)}</td>
-                  <td><span className="badge confirmado">Ativo</span></td>
+                  <td data-label="Paciente" style={{ fontWeight: '600' }}>{patient.name}</td>
+                  <td data-label="Último Agendamento">{formatDate(patient.lastAppointment)}</td>
+                  <td data-label="Status"><span className="badge confirmado">Ativo</span></td>
                 </tr>
               ))}
             </tbody>
