@@ -4,7 +4,6 @@ vendor/
 .pnp
 .pnp.js
 
-# Testing
 coverage/
 
 # Production

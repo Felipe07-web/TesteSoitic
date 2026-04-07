@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import "./styles.css";
+import "./styles/styles.css";
 
 // Importando Componentes
 import { BarraLateral } from "./components/BarraLateral";
@@ -28,6 +28,7 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   // Filtros
   const [filters, setFilters] = useState({
@@ -95,7 +96,7 @@ function App() {
       const matchName = !filters.name || app.patientName.toLowerCase().includes(filters.name.toLowerCase());
       const matchStatus = !filters.status || app.status === filters.status;
       const matchType = !filters.type || app.type === filters.type;
-      const matchDate = !filters.date || app.appointmentDate.includes(filters.date);
+      const matchDate = !filters.date || app.appointmentDate.split('T')[0] === filters.date;
 
       return matchName && matchStatus && matchType && matchDate;
     }).sort((a, b) => new Date(a.appointmentDate) - new Date(b.appointmentDate));
@@ -105,8 +106,13 @@ function App() {
   if (error) return <TelaErro error={error} />;
 
   return (
-    <div className={`app-container ${isDarkMode ? "theme-dark" : ""}`}>
-      <BarraLateral activeTab={activeTab} setActiveTab={setActiveTab} />
+    <div className={`app-container ${isDarkMode ? "theme-dark" : ""} ${isSidebarCollapsed ? "sidebar-collapsed" : ""}`}>
+      <BarraLateral 
+        activeTab={activeTab} 
+        setActiveTab={setActiveTab} 
+        isCollapsed={isSidebarCollapsed} 
+        setIsCollapsed={setIsSidebarCollapsed} 
+      />
 
       <main className="main-content">
         <Cabecalho

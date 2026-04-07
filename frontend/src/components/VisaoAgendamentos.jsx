@@ -1,5 +1,5 @@
 import React from "react";
-import { IconSearch } from "./Icones";
+import { IconSearch, IconCalendar } from "./Icones";
 
 export const VisaoAgendamentos = ({ filteredAppointments, filters, setFilters, formatDate }) => {
   return (
@@ -21,11 +21,14 @@ export const VisaoAgendamentos = ({ filteredAppointments, filters, setFilters, f
             </div>
             <div className="filter-item">
               <label>Data</label>
-              <input
-                type="date"
-                value={filters.date}
-                onChange={(e) => setFilters(f => ({ ...f, date: e.target.value }))}
-              />
+              <div className="input-with-icon">
+                <IconCalendar />
+                <input
+                  type="date"
+                  value={filters.date}
+                  onChange={(e) => setFilters(f => ({ ...f, date: e.target.value }))}
+                />
+              </div>
             </div>
             <div className="filter-item">
               <label>Tipo</label>
@@ -34,9 +37,9 @@ export const VisaoAgendamentos = ({ filteredAppointments, filters, setFilters, f
                 onChange={(e) => setFilters(f => ({ ...f, type: e.target.value }))}
               >
                 <option value="">Todos</option>
-                <option value="Primeira Consulta">Primeira Consulta</option>
-                <option value="Retorno">Retorno</option>
-                <option value="Exame">Exame</option>
+                <option value="primeira consulta">Primeira Consulta</option>
+                <option value="retorno">Retorno</option>
+                <option value="exame">Exame</option>
               </select>
             </div>
             <div className="filter-item">
