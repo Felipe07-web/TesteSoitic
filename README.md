@@ -18,6 +18,9 @@ O projeto está totalmente containerizado com **Docker**, o que significa que vo
     - **API (Backend)**: [http://localhost:8080/api/appointments](http://localhost:8080/api/appointments)
 
 > [!IMPORTANT]
+> **Configuração de Ambiente (Backend)**: O arquivo `.env` do backend contendo as chaves necessárias será enviado separadamente (via WhatsApp). Certifique-se de colocá-lo na pasta `backend/` antes de rodar o comando docker.
+
+> [!IMPORTANT]
 > Na primeira execução, o Docker instalará todas as dependências automaticamente. Isso pode levar alguns minutos. Se os dados não aparecerem de imediato, aguarde o término da instalação no terminal.
 
 ---
