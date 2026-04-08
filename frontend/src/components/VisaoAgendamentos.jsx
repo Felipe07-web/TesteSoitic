@@ -1,7 +1,8 @@
 import React from "react";
 import { IconSearch, IconCalendar } from "./Icones";
+import { formatDate } from "../utils/formatters";
 
-export const VisaoAgendamentos = ({ filteredAppointments, filters, setFilters, formatDate }) => {
+export const VisaoAgendamentos = ({ filteredAppointments, filters, setFilters }) => {
   return (
     <div className="tab-view fade-in">
       <section className="dashboard-card">

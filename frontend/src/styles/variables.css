@@ -1,0 +1,45 @@
+/* Design System Tokens - Grupo SOITIC Medical Dashboard */
+
+:root {
+  --font-primary: 'Inter', sans-serif;
+
+  /* Paleta de Cores */
+  --primary: 215 100% 50%;
+  --primary-hover: 215 100% 40%;
+  --bg-main: 220 33% 98%;
+  --bg-card: 0 0% 100%;
+  --border: 214 32% 91%;
+  --text-main: 222 47% 11%;
+  --text-muted: 215 16% 47%;
+
+  /* Cores de Status */
+  --status-confirmed-bg: 142 70% 95%;
+  --status-confirmed-text: 142 76% 23%;
+  --status-pending-bg: 48 96% 89%;
+  --status-pending-text: 38 92% 35%;
+  --status-canceled-bg: 0 93% 94%;
+  --status-canceled-text: 0 84% 40%;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+
+  --radius: 12px;
+  --transition: all 0.2s ease-in-out;
+}
+
+.theme-dark {
+  --bg-main: 222 47% 4%;
+  --bg-card: 222 47% 7%;
+  --border: 217 33% 17%;
+  --text-main: 210 40% 98%;
+  --text-muted: 215 20% 65%;
+
+  --status-confirmed-bg: 142 70% 10%;
+  --status-confirmed-text: 142 76% 70%;
+  --status-pending-bg: 48 96% 10%;
+  --status-pending-text: 38 92% 70%;
+  --status-canceled-bg: 0 93% 10%;
+  --status-canceled-text: 0 84% 70%;
+}

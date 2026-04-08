@@ -1,62 +1,41 @@
 # 🩺 Medical Dashboard - Grupo SOITIC
 
-Este projeto é uma solução  para o desafio técnico de Desenvolvedor Web, focado em alta performance, arquitetura modular e uma experiência de usuário (UX) de nível empresarial para gestão de agendamentos médicos.
+Este projeto é uma solução de alta performance para a gestão de agendamentos médicos, focada em **arquitetura limpa**, modularidade e uma experiência de usuário (UX) de nível empresarial.
 
 ---
 
-## 🚀 Como Rodar o Projeto (Quick Start)
+## 🚀 Como Rodar o Projeto
 
-O projeto está totalmente containerizado com **Docker**, garantindo que ele funcione em qualquer máquina com zero configuração manual.
+O projeto está totalmente containerizado com **Docker**, o que significa que você não precisa instalar PHP, Node e outras dependencias  manualmente.
 
-1.  **Pré-requisitos**: Ter o [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado e rodando.
-2.  **Comando único**: Na raiz do projeto, execute:
+1.  **Pré-requisito**: Certifique-se de que o [Docker Desktop](https://www.docker.com/products/docker-desktop/) está instalado e em execução.
+2.  **Execução**: Abra o terminal na raiz do projeto e execute o comando abaixo:
     ```bash
     docker compose up -d --build
     ```
-3.  **Acesse no Navegador**:
-    - **Frontend**: [http://localhost:5173](http://localhost:5173)
-    - **API Backend**: [http://localhost:8080/api/appointments](http://localhost:8080/api/appointments)
+3.  **Acesso**:
+    - **Painel (Frontend)**: [http://localhost:5173](http://localhost:5173)
+    - **API (Backend)**: [http://localhost:8080/api/appointments](http://localhost:8080/api/appointments)
 
-*Nota: Na primeira execução, o Docker instalará automaticamente todas as dependências (Laravel e Node). Aguarde alguns instantes até que as portas estejam liberadas.*
-
----
-
-## 🛠️ Tecnologias e Justificativas
-
-Escolhemos uma "Stack" moderna e robusta para demonstrar domínio técnico em diferentes camadas:
-
-### 1. Frontend: React.js + Vite
-- **Por que?**: O React permite uma interface reativa e componentizada. O Vite foi escolhido por ser o "build tool" mais rápido da atualidade, proporcionando um ciclo de desenvolvimento ágil e performance superior no carregamento das páginas.
-
-### 2. Backend: Laravel (PHP 8.4)
-- **Por que?**: Optamos por Laravel para demonstrar conhecimento em um framework de mercado robusto. Ele gerencia as rotas da API e a lógica de negócios de forma elegante e segura.
-
-### 3. Estilização: Vanilla CSS + Design System Customizado
-- **Por que?**: Em vez de frameworks prontos (como Bootstrap/Tailwind), utilizamos **CSS Puro com Variáveis Globais (:root)**. Isso demonstra maestria em design de interfaces, garantindo um código leve, sem dependências externas e com controle total sobre cada pixel e animação.
-
-### 4. Infraestrutura: Docker & Docker Compose
-- **Por que?**: Para eliminar o problema do "na minha máquina funciona". O Docker isola o ambiente, garantindo que o avaliador tenha a mesma experiência exata de execução que o desenvolvedor.
+> [!IMPORTANT]
+> Na primeira execução, o Docker instalará todas as dependências automaticamente. Isso pode levar alguns minutos. Se os dados não aparecerem de imediato, aguarde o término da instalação no terminal.
 
 ---
 
-## 🏗️ Decisões de Arquitetura
+## 🏗️ Arquitetura e Decisões Técnicas
 
-### 📱 Responsividade de Elite (Mobile Cards)
-Uma das principais decisões foi a transformação das **Tabelas em Cards** no celular. Em telas pequenas, tabelas horizontais são difíceis de ler. Nossa solução quebra a tabela em cartões individuais verticais com rótulos internos, proporcionando uma experiência de uso nativa em smartphones.
-
-### 🧩 Componentização e Clean Code
-O Frontend foi dividido em componentes especializados (📂 `src/components/`), facilitando a manutenção e testes. No Backend, implementamos o **Service Layer Pattern** (`AppointmentService`), isolando a lógica de manipulação de dados (JSON) do controlador da API.
-
-### 🌓 Design System Adaptativo
-Implementamos um sistema de temas (Light/Dark Mode) nativo, onde todas as cores mudam harmoniosamente através de variáveis CSS, sem a necessidade de recarregar a página ou usar bibliotecas pesadas.
+- **Frontend Modular**: CSS estruturado em módulos (`variables`, `base`, `components`, `responsive`) para máxima manutenibilidade.
+- **Camada de Inteligência (Custom Hooks)**: Toda a lógica de filtros e processamento de dados está isolada no hook `useAppointments.js`.
+- **Camada de Serviço (API Service)**: Centralização das chamadas HTTP no arquivo `services/api.js`, seguindo o princípio de responsabilidade única.
+- **Design System Customizado**: Interface responsiva com modo Dark/Light nativo via variáveis CSS, sem dependências de frameworks pesados.
 
 ---
 
-## 📊 Funcionalidades Implementadas
-- **Dashboard de Visão Geral**: Estatísticas dinâmicas (Total, Confirmados, Pendentes).
-- **Filtros Avançados**: Busca combinada por nome, data, tipo e status.
-- **Gestão de Pacientes**: Agrupamento inteligente para visualização da base de clientes única.
-- **Sidebar Retrátil**: Menu lateral com animações suaves e modo colapsado para ganhar espaço.
+## 🛠️ Tecnologias Utilizadas
+- **React.js + Vite** (Frontend Rápido)
+- **Laravel** (Backend Robusto)
+- **Vanilla CSS** (Design de Elite)
+- **Docker (Infraestrutura Imutável)**: A escolha do Docker foi estratégica para facilitar a execução do projeto. Com ele, não é necessário o trabalho de instalar PHP, Composer, Node ou outras dependências manualmente na máquina — tudo é configurado e executado através de um único comando.
 
 ---
 *Projeto desenvolvido com foco em excelência técnica para o processo seletivo do Grupo SOITIC.*

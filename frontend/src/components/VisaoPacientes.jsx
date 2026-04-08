@@ -1,6 +1,7 @@
 import React from "react";
+import { formatDate } from "../utils/formatters";
 
-export const VisaoPacientes = ({ patients, formatDate }) => {
+export const VisaoPacientes = ({ patients }) => {
   return (
     <div className="tab-view fade-in">
       <section className="dashboard-card">

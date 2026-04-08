@@ -19,7 +19,7 @@ export const VisaoInicio = ({ stats }) => {
       </section>
 
       <section className="dashboard-card" style={{ marginTop: '24px', padding: '32px', textAlign: 'center' }}>
-        <h3>Bem-vindo de volta, Dr. Felipe</h3>
+        <h3>Bem-vindo de volta</h3>
         <p>Você tem {stats.pending} agendamentos pendentes para revisão hoje.</p>
       </section>
     </div>

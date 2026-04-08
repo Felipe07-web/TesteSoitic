@@ -1,0 +1,214 @@
+/* Responsive Design - Media Queries */
+
+@media (max-width: 1100px) {
+  .main-content {
+    padding: 32px 40px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 88px;
+    padding: 24px 16px;
+  }
+
+  .logo-text,
+  .nav-label {
+    opacity: 0;
+    max-width: 0;
+    transform: translateX(-10px);
+    pointer-events: none;
+  }
+
+  .sidebar-toggle-btn {
+    display: none;
+  }
+
+  .nav-item {
+    justify-content: center;
+    padding: 12px 0;
+  }
+
+  .nav-item svg {
+    transform: scale(1.1);
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .main-content {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-titles h1 {
+    font-size: 1.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-group-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    padding: 12px 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-right: none;
+    border-bottom: 1px solid hsl(var(--border));
+    gap: 0;
+  }
+
+  .sidebar-header {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 4px;
+    order: 2;
+  }
+
+  .sidebar-footer {
+    display: flex;
+    order: 3;
+    border-top: none;
+    padding-top: 0;
+    margin: 0;
+  }
+
+  .header-actions {
+    display: none;
+  }
+
+  .sidebar .theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .nav-item {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 10px;
+  }
+
+  .main-content {
+    padding: 20px;
+    gap: 24px;
+  }
+
+  .header-titles p {
+    font-size: 0.8125rem;
+  }
+
+  .dashboard-card {
+    padding: 20px;
+  }
+
+  .toolbar.filters {
+    padding: 16px;
+  }
+
+  .filter-group-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Layout de Card para Tabela no Mobile */
+  .table-wrapper {
+    margin: 0;
+    padding: 0;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    background-color: hsl(var(--bg-card));
+    border: 1px solid hsl(var(--border));
+    border-radius: 16px;
+    margin-bottom: 16px;
+    padding: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+
+  tr:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: hsl(var(--primary) / 0.2);
+  }
+
+  td {
+    border: none;
+    padding: 10px 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    font-size: 0.875rem;
+    gap: 12px;
+  }
+
+  td:not(:last-child) {
+    border-bottom: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  td:before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: hsl(var(--text-muted));
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    text-align: left;
+    flex-shrink: 0;
+  }
+
+  td .badge {
+    margin-left: auto;
+  }
+
+  table {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  /* Removida regra que transformava o toggle em card full-width */
+}
