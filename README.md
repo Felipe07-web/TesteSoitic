@@ -21,7 +21,13 @@ O projeto está totalmente containerizado com **Docker**, o que significa que vo
 > **Configuração de Ambiente (Backend)**: O arquivo `.env` do backend contendo as chaves necessárias será enviado separadamente (via WhatsApp). Certifique-se de colocá-lo na pasta `backend/` antes de rodar o comando docker.
 
 > [!IMPORTANT]
-> Na primeira execução, o Docker instalará todas as dependências automaticamente. Isso pode levar alguns minutos. Se os dados não aparecerem de imediato, aguarde o término da instalação no terminal.
+> **Primeira Execução**: O Docker instalará todas as dependências automaticamente. Isso pode levar alguns minutos na primeira vez, pois o backend e o frontend precisam construir as imagens.
+>
+> **Dica**: Para acompanhar o progresso da inicialização em tempo real, você pode usar o comando:
+> ```bash
+> docker compose logs -f backend
+> ```
+> Se os dados não aparecerem de imediato no navegador, verifique os logs para garantir que o servidor já terminou de subir.
 
 ---
 
@@ -39,6 +45,19 @@ O projeto está totalmente containerizado com **Docker**, o que significa que vo
 - **Laravel** (Backend Robusto)
 - **Vanilla CSS** (Design de Elite)
 - **Docker (Infraestrutura Imutável)**: A escolha do Docker foi estratégica para facilitar a execução do projeto. Com ele, não é necessário o trabalho de instalar PHP, Composer, Node ou outras dependências manualmente na máquina — tudo é configurado e executado através de um único comando.
+
+---
+
+## ⏳ Graceful Loading & Warm-up
+
+Uma decisão importante de UX foi a implementação de um **Sistema de Carregamento Inteligente**:
+
+![Tela de Carregamento Inteligente](image/loading.png)
+
+- O Frontend é extremamente leve e sobe quase instantaneamente. 
+- Na primeira execução, o Backend (Laravel) pode levar alguns minutos para instalar as dependências via Composer.
+- Enquanto o backend está em "warm-up", o frontend exibe uma **Tela de Carregamento Personalizada** e tenta reconectar automaticamente a cada 3 segundos.
+- Assim que o serviço de API estiver pronto, o Dashboard é carregado automaticamente sem necessidade de refresh manual.
 
 ---
 *Projeto desenvolvido com foco em excelência técnica para o processo seletivo do Grupo SOITIC.*
