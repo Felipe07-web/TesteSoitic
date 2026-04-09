@@ -47,4 +47,4 @@ O projeto está totalmente containerizado com **Docker**, o que significa que vo
 - **Docker (Infraestrutura Imutável)**: A escolha do Docker foi estratégica para facilitar a execução do projeto. Com ele, não é necessário o trabalho de instalar PHP, Composer, Node ou outras dependências manualmente na máquina — tudo é configurado e executado através de um único comando.
 
 ---
-*Projeto desenvolvido com foco em excelência técnica para o processo seletivo do Grupo SOITIC.*
+*Projeto desenvolvido  para o processo seletivo do Grupo SOITIC.*
